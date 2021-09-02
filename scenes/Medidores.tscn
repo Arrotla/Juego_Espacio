@@ -9,13 +9,13 @@
 [node name="barras" type="Node" parent="."]
 
 [node name="energía" parent="barras" instance=ExtResource( 1 )]
-position = Vector2( 847.19, 345.038 )
+position = Vector2( 909.19, 403.038 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="agua" parent="barras" instance=ExtResource( 3 )]
-position = Vector2( 530.331, 316.458 )
+position = Vector2( 592.331, 374.458 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="comida" parent="barras" instance=ExtResource( 2 )]
-position = Vector2( 668.892, 327.402 )
+position = Vector2( 730.892, 385.402 )
 scale = Vector2( 0.5, 0.5 )
