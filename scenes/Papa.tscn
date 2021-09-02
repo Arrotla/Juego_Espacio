@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Prototipo/Personajes/Papa.png" type="Texture" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 41.4527
+height = 128.955
+
+[node name="Papa" type="KinematicBody2D"]
+
+[node name="sprites_papa" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="colision_papa" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )

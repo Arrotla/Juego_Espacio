@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Papa.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Papa.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Medidores.tscn" type="PackedScene" id=3]
+
+[node name="Nivel de Pruebas" type="Node2D"]
+
+[node name="Papa" parent="." instance=ExtResource( 1 )]
+position = Vector2( 382.925, 228.328 )
+script = ExtResource( 2 )
+
+[node name="Medidores" parent="." instance=ExtResource( 3 )]
+position = Vector2( 698, 403 )
