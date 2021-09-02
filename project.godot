@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Juego Espacio"
-run/main_scene="res://scenes/energía.tscn"
+run/main_scene="res://scenes/Medidores.tscn"
 config/icon="res://icon.png"
 
 [physics]

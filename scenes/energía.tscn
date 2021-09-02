@@ -13,6 +13,7 @@ position = Vector2( 510.531, 260.215 )
 script = ExtResource( 7 )
 
 [node name="Energía_1" type="Sprite" parent="."]
+position = Vector2( -2, 0 )
 texture = ExtResource( 3 )
 
 [node name="Energía_2" type="Sprite" parent="."]

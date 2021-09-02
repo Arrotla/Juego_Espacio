@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/energía.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/comida.tscn" type="PackedScene" id=2]
+
+[node name="Medidores" type="Node2D"]
+
+[node name="barras" type="Node" parent="."]
+
+[node name="energía" parent="barras" instance=ExtResource( 1 )]
+position = Vector2( 883.889, 409.895 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="comida" parent="barras" instance=ExtResource( 2 )]
+position = Vector2( 699.591, 379.315 )
+scale = Vector2( 0.5, 0.5 )
