@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Prototipo/Iconos de los personajes/Papa.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Prototipo/Iconos de los personajes/Mama.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Prototipo/Iconos de los personajes/Hijo.png" type="Texture" id=3]
+[ext_resource path="res://scripts/CambioDePersonaje.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "papa",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "mama",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "hijo",
+"speed": 5.0
+} ]
+
+[node name="CambioDePersonaje" type="Node2D"]
+position = Vector2( 503.206, 323.83 )
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 1 )
+animation = "hijo"
+playing = true
