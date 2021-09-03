@@ -1,19 +1,7 @@
 extends Node
 
 func _ready():
-	$GUI/Papa.hide()
-
-
-func _on_Button_pressed():
-	$personajes/Papa_Move.hide()
-	$GUI/Icon_Papa.hide()
-	$personajes/Hijo_Move.hide()
-	$GUI/Icon_Hijo.hide()
-	$personajes/Mama_Move.show()
-	$GUI/Icon_Mama.show()
-	$GUI/Mama.hide()
-	$GUI/Papa.show()
-	$GUI/Hijo.show()
+	$RadialMenu.hide()
 
 func _on_Papa_pressed():
 	$personajes/Papa_Move.show()
@@ -22,9 +10,7 @@ func _on_Papa_pressed():
 	$GUI/Icon_Hijo.hide()
 	$personajes/Mama_Move.hide()
 	$GUI/Icon_Mama.hide()
-	$GUI/Mama.show()
-	$GUI/Papa.hide()
-	$GUI/Hijo.show()
+	$RadialMenu.hide()
 
 func _on_Hijo_pressed():
 	$personajes/Papa_Move.hide()
@@ -33,6 +19,19 @@ func _on_Hijo_pressed():
 	$GUI/Icon_Hijo.show()
 	$personajes/Mama_Move.hide()
 	$GUI/Icon_Mama.hide()
-	$GUI/Mama.show()
-	$GUI/Papa.show()
-	$GUI/Hijo.hide()
+	$RadialMenu.hide()
+
+func _on_Mama_pressed():
+	$personajes/Papa_Move.hide()
+	$GUI/Icon_Papa.hide()
+	$personajes/Hijo_Move.hide()
+	$GUI/Icon_Hijo.hide()
+	$personajes/Mama_Move.show()
+	$GUI/Icon_Mama.show()
+	$RadialMenu.hide()
+
+func _on_cambiarpersonaje_pressed():
+	$RadialMenu.show()
+	$personajes/Papa_Move.hide()
+	$personajes/Hijo_Move.hide()
+	$personajes/Mama_Move.hide()

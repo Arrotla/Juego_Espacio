@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/Personajes.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Papa_Move.tscn" type="PackedScene" id=2]
@@ -7,22 +7,95 @@
 [ext_resource path="res://scenes/Icon_Papa.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Icon_Mama.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Icon_Hijo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Prototipo/Iconos de los personajes/Papa.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Prototipo/Iconos de los personajes/Mama.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Prototipo/Iconos de los personajes/Hijo.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Prototipo/png/imagen_2021-09-03_141150_adobespark.png" type="Texture" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.105882, 0.0941176, 0.0941176, 0.545098 )
 
 [node name="General" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="RadialMenu" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 25.8255, 14.9476 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="RadialMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Circle" type="Control" parent="RadialMenu"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="imagen_2021-09-03_141150_adobespark" type="Sprite" parent="RadialMenu/Circle"]
+position = Vector2( 19.5715, 20.0606 )
+scale = Vector2( 0.06, 0.1 )
+texture = ExtResource( 11 )
+
+[node name="icons" type="Control" parent="RadialMenu/Circle"]
+margin_left = 0.365482
+margin_top = -0.189436
+margin_right = 40.3655
+margin_bottom = 39.8106
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Papa" type="TextureButton" parent="RadialMenu/Circle/icons"]
+margin_left = 17.0517
+margin_top = 10.0893
+margin_right = 22.0517
+margin_bottom = 18.0893
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mama" type="TextureButton" parent="RadialMenu/Circle/icons"]
+margin_left = 14.318
+margin_top = 19.0819
+margin_right = 19.318
+margin_bottom = 27.0819
+texture_normal = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hijo" type="TextureButton" parent="RadialMenu/Circle/icons"]
+margin_left = 20.0791
+margin_top = 19.4565
+margin_right = 25.0791
+margin_bottom = 27.4565
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="personajes" type="Node" parent="."]
 
 [node name="Papa_Move" parent="personajes" instance=ExtResource( 2 )]
-position = Vector2( 463.232, 321.902 )
+position = Vector2( 360, 316 )
 
 [node name="Mama_Move" parent="personajes" instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 821.635, 323.003 )
+position = Vector2( 360, 324 )
 
 [node name="Hijo_Move" parent="personajes" instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 113.589, 373.359 )
+position = Vector2( 880, 368 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -35,32 +108,12 @@ visible = false
 [node name="Icon_Hijo" parent="GUI" instance=ExtResource( 7 )]
 visible = false
 
-[node name="Mama" type="Button" parent="GUI"]
-margin_left = 900.0
-margin_top = 260.917
-margin_right = 1020.0
-margin_bottom = 301.917
-text = "mama"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Papa" type="Button" parent="GUI"]
-margin_left = 900.0
-margin_top = 210.005
-margin_right = 1020.0
-margin_bottom = 251.005
-text = "papa"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Hijo" type="Button" parent="GUI"]
-margin_left = 900.0
-margin_top = 312.465
-margin_right = 1020.0
-margin_bottom = 353.465
-text = "hijo"
+[node name="cambiarpersonaje" type="Button" parent="GUI"]
+margin_left = 849.951
+margin_top = 401.0
+margin_right = 963.951
+margin_bottom = 558.0
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -68,6 +121,7 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 517.918, 296.334 )
 
-[connection signal="pressed" from="GUI/Mama" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="GUI/Papa" to="." method="_on_Papa_pressed"]
-[connection signal="pressed" from="GUI/Hijo" to="." method="_on_Hijo_pressed"]
+[connection signal="pressed" from="RadialMenu/Circle/icons/Papa" to="." method="_on_Papa_pressed"]
+[connection signal="pressed" from="RadialMenu/Circle/icons/Mama" to="." method="_on_Mama_pressed"]
+[connection signal="pressed" from="RadialMenu/Circle/icons/Hijo" to="." method="_on_Hijo_pressed"]
+[connection signal="pressed" from="GUI/cambiarpersonaje" to="." method="_on_cambiarpersonaje_pressed"]
