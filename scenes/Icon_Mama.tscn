@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Medidores.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Prototipo/Iconos de los personajes/Mama.png" type="Texture" id=2]
+
+[node name="Icon_Mama" type="Node2D"]
+
+[node name="Mama" type="Sprite" parent="."]
+position = Vector2( 906.392, 483.32 )
+scale = Vector2( 0.746, 0.749 )
+texture = ExtResource( 2 )
+
+[node name="Medidores" parent="." instance=ExtResource( 1 )]

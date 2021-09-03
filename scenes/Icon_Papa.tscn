@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Medidores.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Prototipo/Iconos de los personajes/Papa.png" type="Texture" id=2]
+
+[node name="Icon_Papa" type="Node2D"]
+
+[node name="Papa" type="Sprite" parent="."]
+position = Vector2( 906.392, 483.32 )
+scale = Vector2( 0.74598, 0.748941 )
+texture = ExtResource( 2 )
+
+[node name="Medidores" parent="." instance=ExtResource( 1 )]
