@@ -8,12 +8,12 @@ radius = 69.3168
 height = 147.861
 
 [node name="Hijo_Move" type="KinematicBody2D"]
+position = Vector2( 520.822, 285.105 )
 script = ExtResource( 1 )
 
 [node name="Hijo" type="Sprite" parent="."]
-position = Vector2( 402.513, 375.256 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 402.686, 393.777 )
+position = Vector2( 0, 17.818 )
 shape = SubResource( 1 )
