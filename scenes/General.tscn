@@ -92,7 +92,7 @@ __meta__ = {
 position = Vector2( 360, 316 )
 
 [node name="Mama_Move" parent="personajes" instance=ExtResource( 3 )]
-position = Vector2( 360, 324 )
+position = Vector2( 624.866, 324 )
 
 [node name="Hijo_Move" parent="personajes" instance=ExtResource( 4 )]
 position = Vector2( 880, 368 )
@@ -119,7 +119,7 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 517.918, 296.334 )
+position = Vector2( 512.255, 300.109 )
 
 [connection signal="pressed" from="RadialMenu/Circle/icons/Papa" to="." method="_on_Papa_pressed"]
 [connection signal="pressed" from="RadialMenu/Circle/icons/Mama" to="." method="_on_Mama_pressed"]
