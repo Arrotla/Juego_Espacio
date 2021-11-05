@@ -92,9 +92,11 @@ __meta__ = {
 position = Vector2( 360, 316 )
 
 [node name="Mama_Move" parent="personajes" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 624.866, 324 )
 
 [node name="Hijo_Move" parent="personajes" instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 880, 368 )
 
 [node name="GUI" type="CanvasLayer" parent="."]

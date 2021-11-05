@@ -29,7 +29,7 @@ func _on_Mama_pressed():
 	$personajes/Mama_Move.show()
 	$GUI/Icon_Mama.show()
 	$RadialMenu.hide()
-
+	
 func _on_cambiarpersonaje_pressed():
 	$RadialMenu.show()
 	$personajes/Papa_Move.hide()
