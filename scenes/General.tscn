@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Personajes.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Papa_Move.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Assets/Prototipo/Iconos de los personajes/Mama.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Prototipo/Iconos de los personajes/Hijo.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Prototipo/png/imagen_2021-09-03_141150_adobespark.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Prototipo/CENTRO DE CONTROL.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Prototipo/BACKGROUND.png" type="Texture" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.105882, 0.0941176, 0.0941176, 0.545098 )
@@ -122,6 +124,16 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512.255, 300.109 )
+
+[node name="BACKGROUND" type="Sprite" parent="."]
+position = Vector2( 514.29, 399.612 )
+scale = Vector2( 0.724078, 0.553431 )
+texture = ExtResource( 13 )
+
+[node name="CENTRO DE CONTROL" type="Sprite" parent="."]
+position = Vector2( 515.718, 301.863 )
+scale = Vector2( 0.45523, 0.403132 )
+texture = ExtResource( 12 )
 
 [connection signal="pressed" from="RadialMenu/Circle/icons/Papa" to="." method="_on_Papa_pressed"]
 [connection signal="pressed" from="RadialMenu/Circle/icons/Mama" to="." method="_on_Mama_pressed"]
