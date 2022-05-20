@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/config/white_pause.png" type="Texture" id=1]
+[ext_resource path="res://Assets/config/white_play.png" type="Texture" id=2]
+[ext_resource path="res://Assets/config/white_config.png" type="Texture" id=3]
+[ext_resource path="res://scripts/MENU.gd" type="Script" id=4]
+[ext_resource path="res://Assets/config/white_restart.png" type="Texture" id=5]
+[ext_resource path="res://Assets/config/white_musicOff.png" type="Texture" id=6]
+[ext_resource path="res://Assets/config/white_musicOn.png" type="Texture" id=7]
+[ext_resource path="res://Assets/SFX/MyVeryOwnDeadShip.ogg" type="AudioStream" id=8]
+
+[node name="MENU" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="MENU" type="TextureButton" parent="."]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 55.0
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="MENU2" type="TextureButton" parent="."]
+visible = false
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 55.0
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="botones" type="Node2D" parent="."]
+position = Vector2( -107, 5 )
+
+[node name="PAUSA" type="TextureButton" parent="botones"]
+pause_mode = 2
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_right = -1.0
+margin_bottom = 49.0
+toggle_mode = true
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+expand = true
+
+[node name="RESTART" type="TextureButton" parent="botones"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 3.0
+margin_right = 52.0
+margin_bottom = 49.0
+texture_normal = ExtResource( 5 )
+expand = true
+
+[node name="MUSICA" type="TextureButton" parent="botones"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 56.0
+margin_right = 105.0
+margin_bottom = 49.0
+toggle_mode = true
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." groups=["bgm"]]
+position = Vector2( 30294, 360 )
+stream = ExtResource( 8 )
+volume_db = -15.0
+autoplay = true
+max_distance = 50000.0
+
+[connection signal="pressed" from="MENU" to="." method="_on_MENU_pressed"]
+[connection signal="pressed" from="MENU2" to="." method="_on_MENU2_pressed"]
+[connection signal="pressed" from="botones/PAUSA" to="." method="_on_PAUSA_pressed"]
+[connection signal="pressed" from="botones/RESTART" to="." method="_on_RESTART_pressed"]
+[connection signal="button_down" from="botones/MUSICA" to="." method="_on_MUSICA_button_down"]
